@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from . models import event
+from . forms import BookingForm
 
 # Create your views here.
 
@@ -20,7 +21,17 @@ def event_list(request):
     return render(request,"events.html",context)
 
 def booking(request):
-    return render(request,"booking.html")
+    if request.method=='POST':
+        form=BookingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    form=BookingForm
+    dict_form={
+        'form':form
+    }
+
+    return render(request,"booking.html",dict_form)
 
 def register(request):
     return render(request,"Register.html")

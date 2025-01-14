@@ -5,6 +5,14 @@
  {% endblock title %}
 
 {% block content %}
+<div class="container p-3 tex-center">
+<form action="" method="POST">
+    {% csrf_token %}
 
-Booking Page
+    {{ form.as_p }}
+
+    <button class="btn">Book Now</button>
+
+    </div>
+</form>
 {% endblock content %}
