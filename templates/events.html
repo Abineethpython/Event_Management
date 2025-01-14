@@ -1,1 +1,27 @@
-events
+{% extends 'base.html' %}
+{% load static %}
+
+ {% block title %}
+   Event
+ {% endblock title %}
+
+{% block content %}
+<h2 class="text-center">Events</h2>
+<div class="container">
+  <div class="row">
+     {% for obj in eve %}
+    <div class="col-6">
+      <div class="card text-center" style="margin: 20px">
+        <img src="{{ obj.image.url }}" class="card-img-top" alt="Image" height="150px" width="150px">
+        <div class="card-body">
+          <h5 class="card-title-center">"{{ obj.name }}"</h5>
+          <p class="card-text-center">"{{ obj.desc }}"</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endblock content %}

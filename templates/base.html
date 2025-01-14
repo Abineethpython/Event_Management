@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+	 <h2 class="nav-header">Euphoria Events</h2> <!-- Header added -->
+</head>
+<body>
+<nav class="menu" id="nav">
+
+
+    <span> <li class="nav-item active"><span class="icon"><i data-feather="home"></i></span><a href="{% url 'home' %}">Home</a>
+        </li>
+    </span>
+
+	<span class="nav-item">
+		<li class="nav-item"><span class="icon"><i data-feather="calendar"></i></span><a href="{% url 'event' %}">Events</a></li>
+	</span>
+	<span class="nav-item">
+		<li class="nav-item"><span class="icon"><i data-feather="book"></i></span><a href="{% url 'book' %}">Booking</a></li>
+	</span>
+	<span class="nav-item">
+		<li class="nav-item"><span class="icon"><i data-feather="mail"></i></span><a href="{% url 'contact' %}">Contact</a></li>
+	</span>
+	<span class="nav-item">
+		<li class="nav-item"><span class="icon"><i data-feather="info"></i></span><a href="{% url 'about' %}">About</a></li>
+	</span>
+	<span class="icon">
+		<span class="nav-item">
+		<li class="nav-item"><span class="icon"><i data-feather="user-plus"></i></span><a href="{% url 'register' %}">Register</a></li>
+	</span>
+
+	</span>
+</nav>
+<script src="{% static 'scripts/file.js' %}"></script>
+{% block content %}
+{% endblock content %}
+</body>
+</html>

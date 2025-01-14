@@ -1,1 +1,23 @@
-home
+{% extends 'base.html' %}
+{% load static %}
+ {% block title %}
+   Home
+ {% endblock title %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/carousal.css' %}">
+
+<div class="carousel">
+    <div class="carousel-images">
+        <img class="carousel-image" src="{% static 'images/carosal 1.jpg' %}" alt="Nature">
+        <img class="carousel-image" src="{% static 'images/carosal 2.jpg' %}" alt="City">
+        <img class="carousel-image" src="{% static 'images/carosal 3.jpg' %}" alt="Ocean">
+    </div>
+
+    <button class="button prev" onclick="moveSlide(-1)">❮</button>
+    <button class="button next" onclick="moveSlide(1)">❯</button>
+</div>
+
+<script src="{% static 'scripts/carousel.js' %}"></script>
+{% endblock content %}

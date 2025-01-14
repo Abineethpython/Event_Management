@@ -1,0 +1,35 @@
+.carousel {
+    position: relative;
+    width: 100%;  /* Adjust width as necessary */
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex; /* Align images in a row */
+    transition: transform 0.5s ease; /* Smooth transition */
+}
+
+.carousel-image {
+    min-width: 100%; /* Ensure each image takes full width */
+    box-sizing: border-box; /* Prevent padding/margins from affecting layout */
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1; /* Ensure buttons are above images */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
