@@ -13,7 +13,7 @@
 
 <h1>Login</h1>
 
-<form action="/register/" method="post">
+<form action="/login/" method="post">
   {% csrf_token %}
   <label for="username">UserName:</label><br>
   <input type="text" id="username" name="username" required><br><br>
@@ -26,7 +26,11 @@
 
   <input type="Submit" name="Login" value="Login">
 </form>
-
+{% for message in messages %}
+<script>
+  alert('{{message}}');
+</script>
+{% endfor %}
 </body>
 </html>
 {% endblock content %}

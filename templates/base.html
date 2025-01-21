@@ -17,7 +17,7 @@
     <span> <li class="nav-item active"><span class="icon"><i data-feather="home"></i></span><a href="{% url 'home' %}">Home</a>
         </li>
     </span>
-
+{% if user.is_authenticated %}
 	<span class="nav-item">
 		<li class="nav-item"><span class="icon"><i data-feather="calendar"></i></span><a href="{% url 'event' %}">Events</a></li>
 	</span>
@@ -25,17 +25,23 @@
 		<li class="nav-item"><span class="icon"><i data-feather="book"></i></span><a href="{% url 'book' %}">Booking</a></li>
 	</span>
 	<span class="nav-item">
+		<li class="nav-item"><span class="icon"><i data-feather="info"></i></span><a href="{% url 'logout' %}">Logout</a></li>
+	</span>
+
+	<h3>{{ user.username }}</h3>
+	{% else %}
+	<span class="nav-item">
 		<li class="nav-item"><span class="icon"><i data-feather="mail"></i></span><a href="{% url 'login' %}">Login</a></li>
 	</span>
-	<span class="nav-item">
-		<li class="nav-item"><span class="icon"><i data-feather="info"></i></span><a href="{% url 'about' %}">About</a></li>
-	</span>
+
 	<span class="icon">
 		<span class="nav-item">
 		<li class="nav-item"><span class="icon"><i data-feather="user-plus"></i></span><a href="{% url 'register' %}">Register</a></li>
 	</span>
 
 	</span>
+	{% endif %}
+
 </nav>
 <script src="{% static 'scripts/file.js' %}"></script>
 {% block content %}
